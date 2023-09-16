@@ -4,7 +4,7 @@
 # 设定输出路径
 @render "$(pro_name).sln"
 # 创建文件夹
-@call $void folder_create("$(pro_folder)\\$(pro_name)\\Modules")
+@call $void folder_create("$(pro_folder)\\Modules")
 # 设置标准 Guid
 @set $guid_proj "9A19103F-16F7-4668-BE54-9A1E7A4F7556"
 @set $guid_folder "2150E333-8FDC-42A3-9474-1A3956D46DE8"
