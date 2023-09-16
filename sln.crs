@@ -44,15 +44,11 @@ Global
 		{$(guid_proj_host)}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{$(guid_proj_host)}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{$(guid_proj_host)}.Release|Any CPU.Build.0 = Release|Any CPU
-        {$(guid_proj_infrastructure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(guid_proj_infrastructure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{$(guid_proj_infrastructure)}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{$(guid_proj_infrastructure)}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{$(guid_proj_infrastructure)}.Release|Any CPU.Build.0 = Release|Any CPU
-        {$(core_guid)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{$(core_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{$(core_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{$(core_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
-        {$(guid_proj_configure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(guid_proj_configure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{$(guid_proj_configure)}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{$(guid_proj_configure)}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{$(guid_proj_configure)}.Release|Any CPU.Build.0 = Release|Any CPU
