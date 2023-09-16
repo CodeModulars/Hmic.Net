@@ -30,11 +30,14 @@ namespace $(pro_name).Host
         {
         }
 
+        /// <summary>
+        /// 依赖注册
+        /// </summary>
         protected override void OnConfigureServices(IServiceCollection services)
         {
             base.OnConfigureServices(services);
             // 添加模块注册
-            services.AddModuler<Apps.ModuleStartup>();
+            // services.AddModuler<Apps.ModuleStartup>();
         }
     }
 }

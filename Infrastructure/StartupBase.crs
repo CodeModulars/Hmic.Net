@@ -23,19 +23,25 @@ namespace $(pro_name).Infrastructure
         {
         }
 
+        /// <summary>
+        /// 应用配置
+        /// </summary>
         protected override void OnConfigure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 初始化配置
+        /// </summary>
         protected override void OnConfigureServices(IServiceCollection services)
         {
-            //throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 初始化
+        /// </summary>
         protected override void OnInitialize()
         {
-            //throw new NotImplementedException();
         }
     }
 }
