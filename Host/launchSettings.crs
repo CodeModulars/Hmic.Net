@@ -1,0 +1,14 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 设定输出路径
+@render "$(pro_name).Host\\Properties\\launchSettings.json"
+{
+  "profiles": {
+    "ToCode.Host": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Dev"
+      }
+    }
+  }
+}
