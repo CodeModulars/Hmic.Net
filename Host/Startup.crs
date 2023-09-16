@@ -1,0 +1,40 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 设定输出路径
+@render "$(pro_name).Host\\Startup.cs"
+# 计算顶层名称
+@call $pro_name_list string_split($pro_name, ".")
+@call $pro_top_name string_list_get($pro_name_list, 0)
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Suyaa.Hosting.Helpers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using $(pro_top_name).Infrastructure;
+
+namespace $(pro_name).Host
+{
+    /// <summary>
+    /// 启动器
+    /// </summary>
+    public class Startup : StartupBase
+    {
+        /// <summary>
+        /// 启动器
+        /// </summary>
+        /// <param name="configuration"></param>
+        public Startup(IConfiguration configuration) : base(configuration)
+        {
+        }
+
+        protected override void OnConfigureServices(IServiceCollection services)
+        {
+            base.OnConfigureServices(services);
+            // 添加模块注册
+            services.AddModuler<Apps.ModuleStartup>();
+        }
+    }
+}

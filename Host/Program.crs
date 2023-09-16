@@ -1,0 +1,9 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 设定输出路径
+@render "$(pro_name).Host\\Program.cs"
+# 计算顶层名称
+@call $pro_name_list string_split($pro_name, ".")
+@call $pro_top_name string_list_get($pro_name_list, 0)
+// 运行宿主
+$(pro_top_name).Infrastructure.Hosting.CreateBuilder<$(pro_name).Host.Startup>(args).Run();

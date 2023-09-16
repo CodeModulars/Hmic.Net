@@ -1,0 +1,18 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 设定输出路径
+@render "$(pro_name).Host\\$(pro_name).Host.csproj"
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\$(pro_name).Infrastructure\$(pro_name).Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
