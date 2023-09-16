@@ -1,0 +1,41 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 设定输出路径
+@render "$(pro_name).Infrastructure\\StartupBase.cs"
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace $(pro_name).Infrastructure
+{
+    /// <summary>
+    /// 启动器
+    /// </summary>
+    public abstract class StartupBase : Suyaa.Hosting.StartupBase
+    {
+
+        /// <summary>
+        /// 启动器
+        /// </summary>
+        /// <param name="configuration"></param>
+        public StartupBase(IConfiguration configuration) : base(configuration)
+        {
+        }
+
+        protected override void OnConfigure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            //throw new NotImplementedException();
+        }
+
+        protected override void OnConfigureServices(IServiceCollection services)
+        {
+            //throw new NotImplementedException();
+        }
+
+        protected override void OnInitialize()
+        {
+            //throw new NotImplementedException();
+        }
+    }
+}
