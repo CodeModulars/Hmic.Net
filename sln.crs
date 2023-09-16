@@ -1,0 +1,66 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 设定输出路径
+@render "$(pro_name).sln"
+# 创建文件夹
+@call $void folder_create("$(pro_name)\\Modules")
+# 设置标准 Guid
+@set $guid_proj "9A19103F-16F7-4668-BE54-9A1E7A4F7556"
+@set $guid_folder "2150E333-8FDC-42A3-9474-1A3956D46DE8"
+# 创建 sln Guid
+@call $guid_sln create_guid()
+@call $guid_sln string_upper($guid_sln)
+# 创建 host Guid
+@call $guid_proj_host create_guid()
+@call $guid_proj_host string_upper($guid_proj_host)
+# 创建 infrastructure Guid
+@call $guid_proj_infrastructure create_guid()
+@call $guid_proj_infrastructure string_upper($guid_proj_infrastructure)
+# 创建 configure Guid
+@call $guid_proj_configure create_guid()
+@call $guid_proj_configure string_upper($guid_proj_configure)
+# 创建 module Guid
+@call $guid_folder_module create_guid()
+@call $guid_folder_module string_upper($guid_folder_module)
+Microsoft Visual Studio Solution File, Format Version 12.00
+$# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{$(guid_proj)}") = "$(pro_name).Host", "$(pro_name).Host\$(pro_name).Host.csproj", "{$(guid_proj_host)}"
+EndProject
+Project("{$(guid_proj)}") = "$(pro_name).Infrastructure", "$(pro_name).Infrastructure\$(pro_name).Infrastructure.csproj", "{$(guid_proj_infrastructure)}"
+EndProject
+Project("{$(guid_proj)}") = "$(pro_name).Configure", "$(pro_name).Configure\$(pro_name).Configure.csproj", "{$(guid_proj_configure)}"
+EndProject
+Project("{$(guid_folder)}") = "Modules", "Modules", "{$(guid_folder_module)}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{$(guid_proj_host)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(guid_proj_host)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(guid_proj_host)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(guid_proj_host)}.Release|Any CPU.Build.0 = Release|Any CPU
+        {$(guid_proj_infrastructure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(guid_proj_infrastructure)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(guid_proj_infrastructure)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(guid_proj_infrastructure)}.Release|Any CPU.Build.0 = Release|Any CPU
+        {$(core_guid)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(core_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(core_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(core_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
+        {$(guid_proj_configure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(guid_proj_configure)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(guid_proj_configure)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(guid_proj_configure)}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {$(guid_sln)}
+	EndGlobalSection
+EndGlobal
