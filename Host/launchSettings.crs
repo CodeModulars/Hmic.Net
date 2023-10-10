@@ -4,7 +4,7 @@
 @render "$(pro_name).Host\\Properties\\launchSettings.json"
 {
   "profiles": {
-    "ToCode.Host": {
+    "$(pro_name).Host": {
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Dev"
