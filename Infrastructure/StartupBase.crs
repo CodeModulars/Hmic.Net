@@ -24,16 +24,17 @@ namespace $(pro_name).Infrastructure
         }
 
         /// <summary>
-        /// 应用配置
+        /// 依赖配置
         /// </summary>
-        protected override void OnConfigure(IApplicationBuilder app, IWebHostEnvironment env)
+        /// <param name="dependency"></param>
+        protected override void OnConfigureDependency(IDependencyManager dependency)
         {
         }
 
         /// <summary>
-        /// 初始化配置
+        /// 应用配置
         /// </summary>
-        protected override void OnConfigureServices(IServiceCollection services)
+        protected override void OnConfigure(IApplicationBuilder app, IWebHostEnvironment env)
         {
         }
 
@@ -42,6 +43,12 @@ namespace $(pro_name).Infrastructure
         /// </summary>
         protected override void OnInitialize()
         {
+        }
+        
+        // 创建依赖管理器
+        protected override IDependencyManager OnDependencyManagerCreating(IServiceCollection services)
+        {
+            return new DependencyManager(services);
         }
     }
 }

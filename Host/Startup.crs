@@ -26,18 +26,31 @@ namespace $(pro_name).Host
         /// 启动器
         /// </summary>
         /// <param name="configuration"></param>
-        public Startup(IConfiguration configuration) : base(configuration)
+        public KernelStartup(IConfiguration configuration) : base(configuration)
         {
         }
 
         /// <summary>
-        /// 依赖注册
+        /// 依赖配置
         /// </summary>
-        protected override void OnConfigureServices(IServiceCollection services)
+        /// <param name="dependency"></param>
+        protected override void OnConfigureDependency(IDependencyManager dependency)
         {
-            base.OnConfigureServices(services);
-            // 添加模块注册
-            // services.AddModuler<Apps.ModuleStartup>();
+            // 处理标准依赖
+            base.OnConfigureDependency(dependency);
+            // 添加Base模块
+            //dependency.AddModuler<Jues.Base.Apps.ModuleStartup>();
+        }
+
+        /// <summary>
+        /// 初始化事件
+        /// </summary>
+        protected override void OnInitialize()
+        {
+            // 处理标准初始化
+            base.OnInitialize();
+            // 引入Base模块
+            //this.Import<Base.Apps.ModuleStartup>();
         }
     }
 }
