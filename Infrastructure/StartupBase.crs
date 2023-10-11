@@ -6,13 +6,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Suyaa.DependencyInjection;
+using Suyaa.DependencyInjection.ServiceCollection;
 
 namespace $(pro_name).Infrastructure
 {
     /// <summary>
     /// 启动器
     /// </summary>
-    public abstract class StartupBase : Suyaa.Hosting.StartupBase
+    public abstract class StartupBase : Suyaa.Hosting.Kernel.StartupBase
     {
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace $(pro_name).Infrastructure
         protected override void OnInitialize()
         {
         }
-        
+
         // 创建依赖管理器
         protected override IDependencyManager OnDependencyManagerCreating(IServiceCollection services)
         {
